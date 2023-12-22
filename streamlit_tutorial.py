@@ -12,15 +12,12 @@ def main():
     st.write('**Por favor seleccione el servicio predictivo que desea utilizar**')
 
     # Selección del servicio entre dos opciones
-    opcion = st.radio('Seleccione el servicio:', ('Predicción del tipo de flor', 'Predicción de imagen'), index=None)
+    opcion = st.radio('Seleccione el servicio:', ('Predicción de los pulmones', 'Predicción de imagen'), index=None)
 
     # Redirección a la página del servicio seleccionado
-    if opcion == 'Predicción del tipo de flor':
-        way_to_pred = st.radio('¿Cómo desea realizar la predicción de la flor?', ('Ingresando datos manualmente', 'Subiendo un archivo CSV'), index=None)
-        if way_to_pred == 'Ingresando datos manualmente':
-            # Redirigir a la página de predicción de iris con datos manuales
-            switch_page("pred_iris_man")
-        elif way_to_pred == 'Subiendo un archivo CSV':
+    if opcion == 'Predicción del estado de los pulmones':
+        way_to_pred = st.radio('¿Cómo desea realizar la predicción?', ('Subiendo un archivo CSV'), index=None)
+        if way_to_pred == 'Subiendo un archivo CSV':
             # Redirigir a la página de predicción de iris con archivo CSV
             switch_page("pred_iris_csv")
     elif opcion == 'Predicción de imagen':

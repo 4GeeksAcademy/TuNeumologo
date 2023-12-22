@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-from utils import predict_flores
+from utils import predict_pneumonia
 
 # Título de la aplicación
-st.title('Predicción de flores desde un archivo CSV')
-st.image('iris.jpg', caption='Imagen de iris', use_column_width=True)
+st.title('Predicción de pneumonía desde un archivo CSV')
+st.image('imagen.jpg', caption='imagen rayos-x pulmones', use_column_width=True)
 
 # Widget para cargar un archivo CSV
 uploaded_file = st.file_uploader("Selecciona un archivo CSV", type=['csv'])
@@ -27,7 +27,7 @@ if uploaded_file is not None:
     # Botón para realizar la predicción con las columnas seleccionadas
     if st.button('Realizar Predicción con CSV'):
         # Realizar la predicción utilizando las columnas seleccionadas
-        predicted_values = predict_flores(df[feature_cols])
+        predicted_values = predict_pneumonia(df[feature_cols])
 
         # Mostrar los resultados de la predicción
         st.success('Éxito al realizar la predicción!')
